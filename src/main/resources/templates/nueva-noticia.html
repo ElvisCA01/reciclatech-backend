@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Crear Nueva Noticia</title>
+</head>
+<body>
+<h1>Crear Nueva Noticia</h1>
+<form th:action="@{/noticias/nuevo}" method="post" enctype="multipart/form-data" th:object="${noticia}">
+  <label for="titulo">Título:</label>
+  <input type="text" id="titulo" th:field="*{titulo}" required><br><br>
+
+  <label for="descripcion">Descripción:</label>
+  <textarea id="descripcion" th:field="*{descripcion}" required></textarea><br><br>
+
+  <label for="link">Link:</label>
+  <input type="text" id="link" th:field="*{link}" required><br><br>
+
+  <label for="imagen">Imagen:</label>
+  <input type="file" id="imagen" name="file" accept="image/*"><br><br>
+
+  <button type="submit">Guardar</button>
+</form>
+</body>
+</html>

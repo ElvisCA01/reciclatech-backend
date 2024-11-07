@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Únete a Nosotros</title>
+</head>
+<body>
+<h1>Registros de "Únete a Nosotros"</h1>
+<a href="/unete-a-nosotros/nuevo">Nuevo Registro</a>
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Correo</th>
+    <th>Número</th>
+  </tr>
+  <tr th:each="registro : ${uneteANosotros}">
+    <td th:text="${registro.nombre}"></td>
+    <td th:text="${registro.correo}"></td>
+    <td th:text="${registro.numero}"></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Noticias</title>
+</head>
+<body>
+<h1>Lista de Noticias</h1>
+<a href="/noticias/nuevo">Crear Nueva Noticia</a>
+<table>
+  <tr>
+    <th>Título</th>
+    <th>Descripción</th>
+    <th>Link</th>
+    <th>Imagen</th>
+    <th>Acciones</th>
+  </tr>
+  <tr th:each="noticia : ${noticias}">
+    <td th:text="${noticia.titulo}"></td>
+    <td th:text="${noticia.descripcion}"></td>
+    <td th:text="${noticia.link}"></td>
+    <td>
+      <img th:if="${noticia.imagen != null}"
+           th:src="@{'data:image/jpeg;base64,' + ${imageUtil.getImgData(noticia.imagen)}}"
+           alt="Imagen de noticia"
+           width="100"/>
+    </td>
+    <td>
+      <!-- Botón de eliminar -->
+      <form th:action="@{'/noticias/eliminar/' + ${noticia.id}}" method="post" th:object="${noticia}">
+        <button type="submit" onclick="return confirm('¿Estás seguro de que quieres eliminar esta noticia?')">Eliminar</button>
+      </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
