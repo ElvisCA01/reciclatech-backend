@@ -11,7 +11,7 @@ public class WebConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         // Permite CORS desde localhost:4200
         registry.addMapping("/api/**") // Aquí defines los endpoints que se verán afectados por esta configuración
-                .allowedOrigins("http://localhost:4200") // El origen desde donde se permite hacer las solicitudes
+                .allowedOrigins("https://halvertcode.github.io") // El origen desde donde se permite hacer las solicitudes
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Los métodos permitidos
                 .allowedHeaders("*") // Permite todas las cabeceras
                 .allowCredentials(true); // Permite el envío de cookies (si es necesario)
