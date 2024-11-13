@@ -2,10 +2,23 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>Únete a Nosotros</title>
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
-<h1>Registros de "Únete a Nosotros"</h1>
-<a href="/unete-a-nosotros/nuevo">Nuevo Registro</a>
+<header>
+  <nav>
+    <ul>
+      <li><a th:href="@{/noticias}">Noticias</a></li>
+      <li><a th:href="@{/proyectos}">Proyectos</a></li>
+      <li><a th:href="@{/unete-a-nosotros}">Únete a Nosotros</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="header-container">
+  <h1>Registros de "Únete a Nosotros"</h1>
+  <a href="/unete-a-nosotros/nuevo" class="new-button">Nuevo Registro</a>
+</div>
 <table>
   <tr>
     <th>Nombre</th>

@@ -2,8 +2,19 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>Nuevo Registro</title>
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
+<header>
+  <nav>
+    <ul>
+      <li><a th:href="@{/noticias}">Noticias</a></li>
+      <li><a th:href="@{/proyectos}">Proyectos</a></li>
+      <li><a th:href="@{/unete-a-nosotros}">Únete a Nosotros</a></li>
+    </ul>
+  </nav>
+</header>
+
 <h1>Registrar en "Únete a Nosotros"</h1>
 <form action="/unete-a-nosotros/nuevo" method="post">
   <label for="nombre">Nombre:</label>

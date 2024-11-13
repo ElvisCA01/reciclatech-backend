@@ -2,8 +2,19 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Nuevo Proyecto</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
+<header>
+    <nav>
+        <ul>
+            <li><a th:href="@{/noticias}">Noticias</a></li>
+            <li><a th:href="@{/proyectos}">Proyectos</a></li>
+            <li><a th:href="@{/unete-a-nosotros}">Únete a Nosotros</a></li>
+        </ul>
+    </nav>
+</header>
+
 <h1>Crear Nuevo Proyecto</h1>
 <form action="/proyectos/nuevo" method="post" enctype="multipart/form-data">
     <label for="titulo">Título:</label>

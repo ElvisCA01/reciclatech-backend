@@ -2,8 +2,19 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>Crear Nueva Noticia</title>
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
+<header>
+  <nav>
+    <ul>
+      <li><a th:href="@{/noticias}">Noticias</a></li>
+      <li><a th:href="@{/proyectos}">Proyectos</a></li>
+      <li><a th:href="@{/unete-a-nosotros}">Únete a Nosotros</a></li>
+    </ul>
+  </nav>
+</header>
+
 <h1>Crear Nueva Noticia</h1>
 <form th:action="@{/noticias/nuevo}" method="post" enctype="multipart/form-data" th:object="${noticia}">
   <label for="titulo">Título:</label>

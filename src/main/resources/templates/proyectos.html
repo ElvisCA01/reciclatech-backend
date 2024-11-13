@@ -2,10 +2,22 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>Proyectos</title>
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
-<h1>Lista de Proyectos</h1>
-<a href="/proyectos/nuevo">Nuevo Proyecto</a>
+<header>
+  <nav>
+    <ul>
+      <li><a th:href="@{/noticias}">Noticias</a></li>
+      <li><a th:href="@{/proyectos}">Proyectos</a></li>
+      <li><a th:href="@{/unete-a-nosotros}">Únete a Nosotros</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="header-container">
+  <h1>Lista de Proyectos</h1>
+  <a href="/proyectos/nuevo" class="new-button">Crear Nuevo Proyecto</a>
+</div>
 <table>
   <tr>
     <th>Título</th>
@@ -22,7 +34,6 @@
       <img th:src="@{/proyectos/imagen/{id}(id=${proyecto.id})}" alt="Imagen" width="100" />
     </td>
     <td>
-      <!-- Botón de eliminar -->
       <form th:action="@{'/proyectos/eliminar/' + ${proyecto.id}}" method="post" th:object="${proyecto}">
         <button type="submit" onclick="return confirm('¿Estás seguro de que quieres eliminar este proyecto?')">Eliminar</button>
       </form>

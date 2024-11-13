@@ -2,10 +2,23 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>Noticias</title>
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
-<h1>Lista de Noticias</h1>
-<a href="/noticias/nuevo">Crear Nueva Noticia</a>
+<header>
+  <nav>
+    <ul>
+      <li><a th:href="@{/noticias}">Noticias</a></li>
+      <li><a th:href="@{/proyectos}">Proyectos</a></li>
+      <li><a th:href="@{/unete-a-nosotros}">Únete a Nosotros</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="header-container">
+  <h1>Lista de Noticias</h1>
+  <a href="/noticias/nuevo" class="new-button">Crear Nueva Noticia</a>
+</div>
+
 <table>
   <tr>
     <th>Título</th>
@@ -25,7 +38,6 @@
            width="100"/>
     </td>
     <td>
-      <!-- Botón de eliminar -->
       <form th:action="@{'/noticias/eliminar/' + ${noticia.id}}" method="post" th:object="${noticia}">
         <button type="submit" onclick="return confirm('¿Estás seguro de que quieres eliminar esta noticia?')">Eliminar</button>
       </form>
