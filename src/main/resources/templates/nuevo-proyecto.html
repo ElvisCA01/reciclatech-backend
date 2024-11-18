@@ -16,20 +16,24 @@
 </header>
 
 <h1>Crear Nuevo Proyecto</h1>
-<form action="/proyectos/nuevo" method="post" enctype="multipart/form-data">
-    <label for="titulo">Título:</label>
-    <input type="text" id="titulo" name="titulo" required><br><br>
+<div class="form-container">
+    <form class="styled-form" action="/proyectos/nuevo" method="post" enctype="multipart/form-data">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" required><br><br>
 
-    <label for="descripcion">Descripción:</label>
-    <textarea id="descripcion" name="descripcion" required></textarea><br><br>
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" required></textarea><br><br>
 
-    <label for="link">Link:</label>
-    <input type="text" id="link" name="link" required><br><br>
+        <label for="link">Link:</label>
+        <input type="text" id="link" name="link" required><br><br>
 
-    <label for="file">Imagen:</label>
-    <input type="file" id="file" name="file" accept="image/*"><br><br>
+        <label for="file">Imagen:</label>
+        <input type="file" id="file" name="file" accept="image/*"><br><br>
 
-    <button type="submit">Guardar</button>
-</form>
+        <button type="submit">Guardar</button>
+    </form>
+
+</div>
+
 </body>
 </html>
